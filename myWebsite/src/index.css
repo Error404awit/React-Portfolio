@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dark {
+  @apply transition-colors duration-300;
+}
+
+@layer components {
+  .blinking-cursor::after {
+    content: "|";
+    animation: blink 1s step-start infinite;
+    @apply text-gray-600 dark:text-[#fab700];
+  }
+  .not-blinking::after {
+    content: "|";
+    @apply text-gray-600 dark:text-[#fab700];
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  .osab {
+    background: rgba(255, 255, 255, 0.2);
+    /*border-radius: 16px;*/
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-once {
+    animation: spin 0.5s linear 1;
+  }
+  .underline-animation {
+    @apply inline-block relative after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-[3px] after:bottom-[0]
+    after:left-[0] dark:after:bg-secondary after:bg-tertiary after:[transition:transform_0.25s_ease-out]
+    hover:after:scale-x-100;
+  }
+  .theme-Icon {
+    @apply absolute text-yellow-200 z-10 top-[.48em] left-[.80em];
+  }
+  .nav-item .active {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+
+    @apply dark:decoration-secondary;
+  }
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .animate {
+    animation: fadeIn 500ms ease-out backwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      transform: translateY(-520px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+}
