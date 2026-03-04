@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { AiFillFacebook, AiFillGithub, AiFillMail } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub, AiFillMail } from "react-icons/ai";
 import { MyContext } from "../context/ResumeContext";
 import TypeWriter from "../components/TypeWriter";
 import bgme from "../assets/bg-me.png";
@@ -47,8 +47,12 @@ const Home = ({ darkMode }) => {
       {/*Mobile View*/}
 
       <div className="flex justify-evenly text-5xl text-tertiary dark:text-[#f5f5f5] py-5 lg:hidden">
-        <AiFillFacebook
-          onClick={() => openNewTab("https://web.facebook.com/calebandrei123/")}
+        <AiFillLinkedin
+          onClick={() =>
+            openNewTab(
+              "https://www.linkedin.com/in/caleb-andrei-juanito-981b852a3/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbNvnSl54SJyi8DX6rAUTBQ%3D%3D",
+            )
+          }
         />
         <AiFillGithub
           onClick={() => openNewTab("https://github.com/Error404awit")}
