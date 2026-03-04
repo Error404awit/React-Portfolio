@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Bing from "../assets/Video.mp4";
+import Bing from "../assets/Vide0.mp4";
 import { AiFillGithub } from "react-icons/ai";
 
 function BingoModal({ project, onClose }) {
